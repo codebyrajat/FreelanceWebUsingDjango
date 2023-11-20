@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="/contactstyle.css">
+{% endblock head  %}
+{% block title %} Contact {% endblock title %}
+{% block body %}
+<div class="container-fluid  px-0 mb-10">
+    <img src="https://source.unsplash.com/random/1700x350/?smartphone" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class=" heading text-center">
+    <h2> CONTACT US </h2>
+
+
+</div>
+
+<div class="container contactform mb-3 px-100 py-20">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name </label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name">
+            <div id="name" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email"  aria-describedby="email">
+            <div id="email" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Tell me why you want to contact me... </label>
+            <textarea class="form-control" id="desc" name ="desc" cols="10" rows="04"></textarea>
+            <div id="desc" class="form-text">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<style>
+      .contactform{
+            margin-top: 10px;
+        }
+</style>
+{% endblock body %}
